@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;500;700&family=Righteous&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 h1, h2, h3 {
     font-family: 'Righteous', cursive;
 }

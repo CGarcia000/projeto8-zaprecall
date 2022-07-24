@@ -1,0 +1,78 @@
+.card {
+    margin: 0 auto;
+    height: 3rem;
+    width: 20rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
+    padding: 0 0.7rem;
+    font-weight: 700;
+}
+
+.card > button {
+    cursor: pointer;
+}
+
+ion-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.card.open {
+    background-color: #ffffd4;
+    font-weight: 400;
+    font-size: 18px;
+    height: 8rem;
+    flex-direction: column;
+    align-items: initial;
+    padding: 1rem 0.7rem;
+    padding-bottom: 0.4rem;
+}
+
+.buttons {
+    display: flex;
+}
+
+.turn {
+    justify-content: end;
+}
+
+.resps {
+    justify-content: space-between;
+}
+
+.resp {
+    color: white;
+    background-color: aqua;
+    font-size: 12px;
+    height: 2.3rem;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.resp > ion-icon {
+    font-size: 14px;
+}
+
+.red {
+    background-color: #ff3030;
+}
+
+.orange {
+    background-color: #ff922e;
+}
+
+.green {
+    line-height: 18px;
+    background-color: #2fbe34;
+}
+
+@media (max-width: 614px) {
+    .card {
+        width: 80%;
+    }
+}
