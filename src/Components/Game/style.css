@@ -36,3 +36,29 @@ button {
 #count-questions {
     text-transform: uppercase;
 }
+
+#cards {
+    margin-bottom: 5rem;
+}
+
+#result {
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 11rem;
+    justify-content: space-around;
+    margin: 0.5rem 0;
+}
+
+#result p:nth-child(1) {
+    font-weight: bold;
+}
+
+#result p:nth-child(2) {
+    text-align: center;
+}
+
+#resps {
+    margin: 0.5rem 0;
+}

@@ -6,8 +6,6 @@ import { Game } from "./Game";
 export default function App() {
     const [isStarted, setStarted] = useState(false);
 
-    if (!isStarted) setStarted(true); // comentar dps
-
     return (
         <>
         {isStarted ? <Game /> : <InitialPage setStarted={setStarted}/>}

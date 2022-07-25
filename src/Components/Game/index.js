@@ -1,14 +1,15 @@
+import { useState } from "react";
 import { Card } from "./Card/";
+import { Cards } from "./Cards";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-
 
 import './style.css'
 
 const questions = [
     {
         question: 'O que é JSX',
-        res: 'Uma extensão de linguagem do JavaScript'
+        res: 'Uma extensão de linguagem do JavaScript',
     },
     {
         question: 'O React é __',
@@ -38,32 +39,27 @@ const questions = [
         question: 'Usamos estado (state) para __ ',
         res: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'
     },
-]
-
-// const question = {
-//     // o id na carta entra no index do map + 1
-//     text: '',
-//     res: '',
-//     opened: false,    
-//     turned: false,
-//     status: '',
-// }
-// status: (notRemember | almost | zap),
-
-// todo - footer itens concluidos >> uma array que recebe os status na ordem
-
+].sort(() => 0.5 - Math.random());
 
 export function Game () {
+
+    const [orderRes, setOrderResp] = useState([]);
+    const [countCards, setCountCards] = useState(0);
+
     return (
         <>
             <Header />
 
-            {/* <Card question={question}/> */}
-            <Card />
+            <Cards>
+                {questions.map((q, i) => <Card 
+                        key={i} 
+                        index={i+1} 
+                        objQuestion={q}
+                        order={[orderRes, setOrderResp, countCards, setCountCards]} 
+                    />)}
+            </Cards>
 
-            {/* map com as cards */}
-
-            <Footer />
+            <Footer orderRes={orderRes} countCards={countCards} numCards={questions.length}/>
         </>
     );
 }

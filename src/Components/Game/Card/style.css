@@ -1,5 +1,6 @@
 .card {
     margin: 0 auto;
+    margin-bottom: 1rem;
     height: 3rem;
     width: 20rem;
     display: flex;
@@ -13,7 +14,7 @@
     font-weight: 700;
 }
 
-.card > button {
+.card button {
     cursor: pointer;
 }
 
@@ -69,6 +70,21 @@ ion-icon {
 .green {
     line-height: 18px;
     background-color: #2fbe34;
+}
+
+.red-span {
+    color: #ff3030;
+    text-decoration: line-through;
+}
+
+.orange-span {
+    color: #ff922e;
+    text-decoration: line-through;
+}
+
+.green-span {
+    color: #2fbe34;
+    text-decoration: line-through;
 }
 
 @media (max-width: 614px) {

@@ -6,28 +6,44 @@ import { ClosedCard } from "./ClosedCard";
 import './style.css'
 
 export function Card({
-    question
+    index,
+    objQuestion,
+    order,
 }) {
-    const [isOpen, setIsOpen] = useState(false) // state da card se já foi respondida
-    const [isDone, setIsDone] = useState(false) // state da card se já foi respondida
+    const [isOpen, setIsOpen] = useState(false);
+    const [isDone, setIsDone] = useState(false);
+    const [classes, setClasses] = useState('card');
+    
 
-    // const questionJSX = !question.turned ? (
-    //     <div className="card">
-    //         <span>{question.text}</span>
-    //         {/* icon */}
-    //     </div>
-    // ) : (
-    //     <div className="card turned">
-    //         <span>{question.res}</span>
-    //         <button className="red">Não lembrei</button>
-    //         <button className="orange">Quase não lembrei</button>
-    //         <button className="green">Zap!</button>
-    //     </div>
-    // );
+    const notDone = isOpen ? (
+        <OpenCard 
+            objQuestion={objQuestion}
+            order={order} 
+            setIsDone={setIsDone}
+            setClasses={setClasses}
+        />
+    ): (
+        <ClosedCard 
+            index={index} 
+            stateQuestion={objQuestion.state}
+            setIsOpen={setIsOpen} 
+            setClasses={setClasses}
+            isDone={isDone}
+        />
+    )
+    
+    const done = <ClosedCard 
+        index={index} 
+        stateQuestion={objQuestion.state}
+        setIsOpen={setIsOpen} 
+        setClasses={setClasses}
+        isDone={isDone}
+    />
+
 
     return (
-        <div className="card">
-            {isOpen ? <OpenCard /> : <ClosedCard isOpen={isOpen} setIsOpen={setIsOpen} />}
+        <div className={classes}>
+            {isDone ? done : notDone}
         </div>
     );
 }
